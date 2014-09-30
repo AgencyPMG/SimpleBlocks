@@ -12,16 +12,18 @@
  * @license     http://opensource.org/licenses/Apache-2.0 Apache-2.0
  */
 
-class SimpleBlocks
+namespace PMG\SimpleBlocks;
+
+class PostType
 {
     const POST_TYPE = 'sb_posttype';
     
     function __construct()
     {
-        add_action( 'init', array( $this, 'createSimpleBlocks') );
+        add_action( 'init', array( $this, 'createPostType') );
     }
     
-    function createSimpleBlocks()
+    public function createPostType()
     {
 	register_post_type(static::POST_TYPE,
 	    array(

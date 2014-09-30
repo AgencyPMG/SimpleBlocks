@@ -12,21 +12,22 @@
  * @copyright   2014 PMG <http://pmg.co>
  * @license     http://opensource.org/licenses/Apache-2.0 Apache-2.0
  */
+namespace PMG\SimpleBlocks;
 
-class SimpleBlocksShortcode
+class Shortcode
 {
     function __construct()
     {
         add_shortcode(
             'simple_block',
-            array($this, 'sbShortcodeOutput')
+            array($this, 'shortcodeOutput')
         );     
     }
     
-    function sbShortcodeOutput($args=array(), $content=null)
+    public function shortcodeOutput($args=array(), $content=null)
     {
-        $q = new WP_Query(array(
-            'post_type'     => SimpleBlocks::POST_TYPE,
+        $q = new \WP_Query(array(
+            'post_type'     => PostType::POST_TYPE,
             'nopaging'      => true,
             'orderby'       => 'menu_order title',
             'order'         => 'ASC',
