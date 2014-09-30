@@ -11,14 +11,34 @@
  * @copyright   2014 PMG <http://pmg.co>
  * @license     http://opensource.org/licenses/Apache-2.0 Apache-2.0
  */
-
 namespace PMG\SimpleBlocks;
 
-class PostType
+abstract class Setup
 {
     const POST_TYPE = 'sb_posttype';
     
-    function __construct()
+    private static $registry = array();
+
+    public static function instance()
+    {
+        $cls = get_called_class();
+        if (!isset(self::$registry[$cls])) {
+            self::$registry[$cls] = new $cls();
+        }
+        return self::$registry[$cls];
+    }
+
+    public static function init()
+    {
+        static::instance()->hook();
+    }
+    
+    abstract public function hook();
+}
+
+class PostType extends Setup
+{
+    function hook()
     {
         add_action( 'init', array( $this, 'createPostType') );
     }
