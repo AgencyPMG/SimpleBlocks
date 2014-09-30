@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Simple Blocks Post Type
+ * Plugin Name: Simple Blocks Custom Post Type
  * Plugin URI: http://pmg.co/
  * Description: Creates a custom post type that you can pull through via a shortcode
  * Version: 1.0
@@ -30,7 +30,7 @@
 define('SIMPLE_BLOCKS_URL', dirname(__FILE__));
 
 require_once SIMPLE_BLOCKS_URL . '/inc/custom-post-type.php';
-$var = new SimpleBlocks();
+$a = new SimpleBlocks();
 
 require_once SIMPLE_BLOCKS_URL . '/inc/shortcode.php';
 $b = new SimpleBlocksShortcode();

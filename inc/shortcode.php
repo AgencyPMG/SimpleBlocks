@@ -1,19 +1,32 @@
 <?php
+/**
+ * This file is part of Simple Blocks and it adds the shortcode
+ * functionality and output.
+ *
+ * Copyright (c) 2014 PMG <http://pmg.co>
+ *
+ * For full copyright and license information please see the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @category    WordPress
+ * @copyright   2014 PMG <http://pmg.co>
+ * @license     http://opensource.org/licenses/Apache-2.0 Apache-2.0
+ */
+
 class SimpleBlocksShortcode
 {
     function __construct()
     {
         add_shortcode(
             'simple_block',
-            array($this, 'simpleBlocksShortcodeOutput')
+            array($this, 'sbShortcodeOutput')
         );     
     }
     
-    function simpleBlocksShortcodeOutput($args=array(), $content=null)
+    function sbShortcodeOutput($args=array(), $content=null)
     {
         $q = new WP_Query(array(
             'post_type'     => SimpleBlocks::POST_TYPE,
-            //'post_type'     => 'sb_posttype',
             'nopaging'      => true,
             'orderby'       => 'menu_order title',
             'order'         => 'ASC',
@@ -44,6 +57,5 @@ class SimpleBlocksShortcode
         wp_reset_query();
         return ob_get_clean();
     }
-}
-        
+}      
 ?>

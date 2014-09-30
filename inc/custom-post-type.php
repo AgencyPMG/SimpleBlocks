@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of Simple Blocks Post Type and it creates the custom post type
+ * This file is part of Simple Blocks and it creates the custom post type
  *
  * Copyright (c) 2014 PMG <http://pmg.co>
  *
@@ -16,7 +16,8 @@ class SimpleBlocks
 {
     const POST_TYPE = 'sb_posttype';
     
-    function __construct() {
+    function __construct()
+    {
         add_action( 'init', array( $this, 'createSimpleBlocks') );
     }
     
