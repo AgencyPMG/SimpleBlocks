@@ -31,5 +31,7 @@ define('SIMPLE_BLOCKS_URL', dirname(__FILE__));
 
 require_once SIMPLE_BLOCKS_URL . '/inc/custom-post-type.php';
 $var = new SimpleBlocks();
- 
+
+require_once SIMPLE_BLOCKS_URL . '/inc/shortcode.php';
+$b = new SimpleBlocksShortcode();
 ?>

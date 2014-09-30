@@ -17,12 +17,12 @@ class SimpleBlocks
     const POST_TYPE = 'sb_posttype';
     
     function __construct() {
-          add_action( 'init', array( $this, 'createSimpleBlocks') );
+        add_action( 'init', array( $this, 'createSimpleBlocks') );
     }
     
     function createSimpleBlocks()
     {
-	register_post_type(POST_TYPE,
+	register_post_type(static::POST_TYPE,
 	    array(
 		'public'        => false,
 		'show_ui'       => true,

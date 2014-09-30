@@ -1,7 +1,7 @@
 <?php
 class SimpleBlocksShortcode
 {
-    public function createSimpleBlocksShortcode()
+    function __construct()
     {
         add_shortcode(
             'simple_block',
@@ -9,10 +9,11 @@ class SimpleBlocksShortcode
         );     
     }
     
-    public function simpleBlocksShortcodeOutput($args=array(), $content=null)
+    function simpleBlocksShortcodeOutput($args=array(), $content=null)
     {
         $q = new WP_Query(array(
             'post_type'     => SimpleBlocks::POST_TYPE,
+            //'post_type'     => 'sb_posttype',
             'nopaging'      => true,
             'orderby'       => 'menu_order title',
             'order'         => 'ASC',
@@ -29,16 +30,12 @@ class SimpleBlocksShortcode
             $q->the_post();
             ?>
             <div id="simple-block-<?php the_ID(); ?>" <?php post_class('row'); ?>
-
-                <div class="col-md-12">
                     <h3>
                             <?php the_title(); ?>
                     </h3>
-                    <div class="entry">
+                    <div class="simple-entry">
                         <?php the_content(); ?>
                     </div>
-                </div>
-
             </div>
             <?php
         }
