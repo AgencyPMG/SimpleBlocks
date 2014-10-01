@@ -35,7 +35,7 @@ class Shortcode extends Setup
         $q = new \WP_Query(array(
             'post_type'     => PostType::POST_TYPE,
             'nopaging'      => false,
-            'post__in'      => array($atts['id']),
+            'post__in'      => explode(',', $atts['id'])
         ));
 
         if (!$q->have_posts()) {
