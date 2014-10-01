@@ -28,9 +28,10 @@ class Shortcode
     {
         $q = new \WP_Query(array(
             'post_type'     => PostType::POST_TYPE,
-            'nopaging'      => true,
+            //'nopaging'      => false,
             'orderby'       => 'menu_order title',
             'order'         => 'ASC',
+            'id'            => 8
         ));
 
         if (!$q->have_posts()) {
@@ -39,21 +40,17 @@ class Shortcode
 
         ob_start();
 
-        echo '<div class="simple_blocks">';
         while ($q->have_posts()) {
             $q->the_post();
+            echo '<div class="simple_block">';
             ?>
-            <div id="simple-block-<?php the_ID(); ?>" <?php post_class('row'); ?>
                     <h3>
-                            <?php the_title(); ?>
+                        <?php the_title(); ?>
                     </h3>
-                    <div class="simple-entry">
-                        <?php the_content(); ?>
-                    </div>
-            </div>
+                    <?php the_content(); ?>
             <?php
+            echo '</div>';
         }
-        echo '</div>';
 
         wp_reset_query();
         return ob_get_clean();
