@@ -29,7 +29,7 @@ class Shortcode extends Setup
     public function shortcodeOutput($args=array(), $content=null)
     {
         $atts = shortcode_atts(array(
-            'id' => ''
+            'id' => null
         ), $args);
         
         $q = new \WP_Query(array(
