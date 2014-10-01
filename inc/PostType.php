@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of Simple Blocks and it creates the custom post type
+ * This file is part of Simple Blocks Plugin and it creates the custom post type
  *
  * Copyright (c) 2014 PMG <http://pmg.co>
  *
@@ -13,28 +13,7 @@
  */
 namespace PMG\SimpleBlocks;
 
-abstract class Setup
-{
-    const POST_TYPE = 'sb_posttype';
-    
-    private static $registry = array();
-
-    public static function instance()
-    {
-        $cls = get_called_class();
-        if (!isset(self::$registry[$cls])) {
-            self::$registry[$cls] = new $cls();
-        }
-        return self::$registry[$cls];
-    }
-
-    public static function init()
-    {
-        static::instance()->hook();
-    }
-    
-    abstract public function hook();
-}
+!defined('ABSPATH') && exit;
 
 class PostType extends Setup
 {

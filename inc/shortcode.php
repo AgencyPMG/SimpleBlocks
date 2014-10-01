@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of Simple Blocks and it adds the shortcode
+ * This file is part of Simple Blocks Plugin and it adds the shortcode
  * functionality and output.
  *
  * Copyright (c) 2014 PMG <http://pmg.co>
@@ -14,28 +14,9 @@
  */
 namespace PMG\SimpleBlocks;
 
-abstract class Initalise
-{  
-    private static $registry = array();
+!defined('ABSPATH') && exit;
 
-    public static function instance()
-    {
-        $cls = get_called_class();
-        if (!isset(self::$registry[$cls])) {
-            self::$registry[$cls] = new $cls();
-        }
-        return self::$registry[$cls];
-    }
-
-    public static function init()
-    {
-        static::instance()->hook();
-    }
-    
-    abstract public function hook();
-}
-
-class Shortcode extends Initalise
+class Shortcode extends Setup
 {
     function hook()
     {

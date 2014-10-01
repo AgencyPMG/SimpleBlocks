@@ -24,14 +24,14 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-namespace PMG\SimpleBlocks;
 !defined('ABSPATH') && exit;
 
 define('SIMPLE_BLOCKS_URL', dirname(__FILE__));
 
-require_once SIMPLE_BLOCKS_URL . '/inc/custom-post-type.php';
-PostType::init();
+require __DIR__.'/inc/Setup.php';
+require __DIR__.'/inc/Shortcode.php';
+require __DIR__.'/inc/PostType.php';
+require __DIR__.'/inc/functions.php';
 
-require_once SIMPLE_BLOCKS_URL . '/inc/shortcode.php';
-Shortcode::init();
+add_action('plugins_loaded', 'pmg_simpleblocks_load');
 ?>
