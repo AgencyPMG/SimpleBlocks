@@ -14,9 +14,30 @@
  */
 namespace PMG\SimpleBlocks;
 
-class Shortcode
+abstract class Initalise
+{  
+    private static $registry = array();
+
+    public static function instance()
+    {
+        $cls = get_called_class();
+        if (!isset(self::$registry[$cls])) {
+            self::$registry[$cls] = new $cls();
+        }
+        return self::$registry[$cls];
+    }
+
+    public static function init()
+    {
+        static::instance()->hook();
+    }
+    
+    abstract public function hook();
+}
+
+class Shortcode extends Initalise
 {
-    function __construct()
+    function hook()
     {
         add_shortcode(
             'simple_block',

@@ -33,5 +33,5 @@ require_once SIMPLE_BLOCKS_URL . '/inc/custom-post-type.php';
 PostType::init();
 
 require_once SIMPLE_BLOCKS_URL . '/inc/shortcode.php';
-$b = new Shortcode();
+Shortcode::init();
 ?>
