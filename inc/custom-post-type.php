@@ -45,7 +45,7 @@ class PostType extends Setup
     
     public function createPostType()
     {
-	register_post_type(static::POST_TYPE,
+	register_post_type(self::POST_TYPE,
 	    array(
 		'public'        => false,
 		'show_ui'       => true,
