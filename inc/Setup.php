@@ -25,5 +25,3 @@ abstract class Setup
     
     abstract public function hook();
 }
-
-?>

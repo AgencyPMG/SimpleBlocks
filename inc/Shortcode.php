@@ -59,5 +59,4 @@ class Shortcode extends Setup
         wp_reset_query();
         return ob_get_clean();
     }
-}      
-?>
+}

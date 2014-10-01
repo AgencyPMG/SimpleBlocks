@@ -36,4 +36,3 @@ class PostType extends Setup
 	
     }
 }
-?>

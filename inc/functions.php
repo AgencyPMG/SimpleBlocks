@@ -19,5 +19,3 @@ function pmg_simpleblocks_load()
     SimpleBlocks\PostType::init();
     SimpleBlocks\Shortcode::init();
 }
-
-?>
