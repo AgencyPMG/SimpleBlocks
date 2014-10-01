@@ -28,12 +28,14 @@ class Shortcode extends Setup
     
     public function shortcodeOutput($args=array(), $content=null)
     {
+        $atts = shortcode_atts(array(
+            'id' => ''
+        ), $args);
+        
         $q = new \WP_Query(array(
             'post_type'     => PostType::POST_TYPE,
-            //'nopaging'      => false,
-            'orderby'       => 'menu_order title',
-            'order'         => 'ASC',
-            'id'            => 8
+            'nopaging'      => false,
+            'post__in'      => array($atts['id']),
         ));
 
         if (!$q->have_posts()) {
