@@ -26,8 +26,6 @@
 */
 !defined('ABSPATH') && exit;
 
-define('SIMPLE_BLOCKS_URL', dirname(__FILE__));
-
 require_once __DIR__.'/inc/Setup.php';
 require_once __DIR__.'/inc/Shortcode.php';
 require_once __DIR__.'/inc/PostType.php';
