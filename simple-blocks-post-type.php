@@ -28,10 +28,10 @@
 
 define('SIMPLE_BLOCKS_URL', dirname(__FILE__));
 
-require __DIR__.'/inc/Setup.php';
-require __DIR__.'/inc/Shortcode.php';
-require __DIR__.'/inc/PostType.php';
-require __DIR__.'/inc/functions.php';
+require_once __DIR__.'/inc/Setup.php';
+require_once __DIR__.'/inc/Shortcode.php';
+require_once __DIR__.'/inc/PostType.php';
+require_once __DIR__.'/inc/functions.php';
 
 add_action('plugins_loaded', 'pmg_simpleblocks_load');
 ?>
