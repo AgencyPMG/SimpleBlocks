@@ -2,7 +2,7 @@
 
 Creates a new custom post type called Simple Blocks.
 The post type can be pulled through using a shortcode
-in an post or page. For example:
+in any post or page. For example:
 
     [simple_block id="8"]
     
