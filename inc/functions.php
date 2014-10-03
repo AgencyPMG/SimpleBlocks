@@ -18,4 +18,8 @@ function pmg_simpleblocks_load()
 {
     SimpleBlocks\PostType::init();
     SimpleBlocks\Shortcode::init();
+    
+    if(is_admin()){
+        //SimpleBlocks\Admin::pmg_ltt_load();
+    }
 }
