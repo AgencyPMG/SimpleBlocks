@@ -48,6 +48,6 @@ class AdminListDisplay extends Setup
     
     function columnOutput($col, $post_id)
     {
-        esc_html_e('[simple_block id="'.$post_id.'"]', 'simple-blocks');
+        echo '[simple_block id="'.$post_id.'"]';
     }
 }
