@@ -36,18 +36,18 @@ class AdminListDisplay extends Setup
         add_action(
            "manage_{$screen->post_type}_posts_custom_column",
            array($this, 'columnOutput'),
-           5, 2
+           10, 2
         );
     }
     
     function addColumn($cols)
     {
-        $cols['template'] = __('Shortcode', 'pmg-list-table');
+        $cols['simpleblock'] = __('Shortcode', 'simple-blocks');
         return $cols;
     }
     
     function columnOutput($col, $post_id)
     {
-        esc_html_e('[simple_block id="'.$post_id.'"]', 'pmg-list-table');
+        esc_html_e('[simple_block id="'.$post_id.'"]', 'simple-blocks');
     }
 }
