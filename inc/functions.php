@@ -21,5 +21,6 @@ function pmg_simpleblocks_load()
     
     if(is_admin()){
         SimpleBlocks\Admin::init();
+        SimpleBlocks\AdminList::init();
     }
 }
