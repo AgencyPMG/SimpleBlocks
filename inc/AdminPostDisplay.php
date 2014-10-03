@@ -17,7 +17,7 @@ namespace PMG\SimpleBlocks;
 
 !defined('ABSPATH') && exit;
 
-class Admin extends Setup
+class AdminPostDisplay extends Setup
 {
     function hook()
     {

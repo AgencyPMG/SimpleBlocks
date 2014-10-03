@@ -30,8 +30,8 @@
 require_once __DIR__.'/inc/Setup.php';
 require_once __DIR__.'/inc/Shortcode.php';
 require_once __DIR__.'/inc/PostType.php';
-require_once __DIR__.'/inc/Admin.php';
-require_once __DIR__.'/inc/AdminList.php';
+require_once __DIR__.'/inc/AdminPostDisplay.php';
+require_once __DIR__.'/inc/AdminListDisplay.php';
 require_once __DIR__.'/inc/functions.php';
 
 add_action('plugins_loaded', 'pmg_simpleblocks_load');

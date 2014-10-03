@@ -20,7 +20,7 @@ function pmg_simpleblocks_load()
     SimpleBlocks\Shortcode::init();
     
     if(is_admin()){
-        SimpleBlocks\Admin::init();
-        SimpleBlocks\AdminList::init();
+        SimpleBlocks\AdminPostDisplay::init();
+        SimpleBlocks\AdminListDisplay::init();
     }
 }
