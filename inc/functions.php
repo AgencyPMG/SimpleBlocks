@@ -20,6 +20,6 @@ function pmg_simpleblocks_load()
     SimpleBlocks\Shortcode::init();
     
     if(is_admin()){
-        //SimpleBlocks\Admin::pmg_ltt_load();
+        SimpleBlocks\Admin::init();
     }
 }

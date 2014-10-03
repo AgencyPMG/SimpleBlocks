@@ -31,11 +31,12 @@ require_once __DIR__.'/inc/Setup.php';
 require_once __DIR__.'/inc/Shortcode.php';
 require_once __DIR__.'/inc/PostType.php';
 require_once __DIR__.'/inc/Admin.php';
+require_once __DIR__.'/inc/AdminList.php';
 require_once __DIR__.'/inc/functions.php';
 
 add_action('plugins_loaded', 'pmg_simpleblocks_load');
 
 if(is_admin()){
-    add_action('load-edit.php', 'pmg_ltt_load');
+    add_action('load-edit.php', 'load');
 }
 
