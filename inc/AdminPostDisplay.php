@@ -21,11 +21,15 @@ class AdminPostDisplay extends Setup
 {
     function hook()
     {
-        add_action( 'add_meta_boxes', array($this, 'addMetaBox') );
+        add_action('add_meta_boxes_'.PostType::POST_TYPE, array($this, 'addMetaBox'));
     }
     
-    function addMetaBox()
+    function addMetaBox($post)
     {
+        if ('auto-draft' === $post->post_status) {
+            return;
+        }
+
         add_meta_box(
             'simple-blocks-shortcode',
             __('Simple Block Shortcode', 'simple-blocks'),
