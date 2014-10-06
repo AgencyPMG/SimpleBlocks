@@ -26,11 +26,18 @@ class AdminPostDisplay extends Setup
     
     function addMetaBox()
     {
-        add_meta_box( 'my-meta-box-id', 'Shortcode', array($this, 'metaBoxContent'), PostType::POST_TYPE, 'side', 'core' );
+        add_meta_box(
+            'simple-blocks-shortcode',
+            __('Simple Block Shortcode', 'simple-blocks'),
+            array($this, 'metaBoxContent'),
+            PostType::POST_TYPE,
+            'side',
+            'core'
+        );
     }
     
     function metaBoxContent($post)
     {
-        echo '[simple_block id="'.$post->ID.'"]';   
+        echo pmg_simpleblocks_shortcode($post->ID);  
     }
 }

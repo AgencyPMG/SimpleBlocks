@@ -4,7 +4,7 @@
  * Plugin URI: http://pmg.co/
  * Description: Creates a custom post type that you can pull through via a shortcode
  * Version: 1.0
- * Text Domain: pmg
+ * Text Domain: simple-blocks
  * Author: Emily Fox <emily@pmg.co>
  * Author URI: http://pmg.co/
  * License: GPL-2.0+

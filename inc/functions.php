@@ -19,8 +19,15 @@ function pmg_simpleblocks_load()
     SimpleBlocks\PostType::init();
     SimpleBlocks\Shortcode::init();
     
-    if(is_admin()){
+    if (is_admin()) {
         SimpleBlocks\AdminPostDisplay::init();
         SimpleBlocks\AdminListDisplay::init();
+    }
+}
+
+if (is_admin()) {
+    function pmg_simpleblocks_shortcode($id)
+    {
+        return sprintf('[simple_block id="%s"]', esc_html($id));
     }
 }

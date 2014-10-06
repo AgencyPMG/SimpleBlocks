@@ -26,7 +26,7 @@ class AdminListDisplay extends Setup
     
     function load()
     {
-        $screen = \get_current_screen();
+        $screen = get_current_screen();
         if (!isset($screen->post_type) || PostType::POST_TYPE != $screen->post_type) {
             return;
         }
@@ -42,12 +42,14 @@ class AdminListDisplay extends Setup
     
     function addColumn($cols)
     {
-        $cols['simpleblock'] = __('Shortcode', 'simple-blocks');
+        $cols['simpleblock'] = __('Simple Block Shortcode', 'simple-blocks');
         return $cols;
     }
     
     function columnOutput($col, $post_id)
     {
-        echo '[simple_block id="'.$post_id.'"]';
+        if ('simpleblock' === $col) {
+            echo pmg_simpleblocks_shortcode($post_id);
+        }
     }
 }
