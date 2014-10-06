@@ -4,8 +4,8 @@
  * Plugin URI: http://pmg.co/
  * Description: Creates a custom post type that you can pull through via a shortcode
  * Version: 1.0
- * Text Domain: marklogic
- * Author: Emily Fox
+ * Text Domain: simple-blocks
+ * Author: Emily Fox <emily@pmg.co>
  * Author URI: http://pmg.co/
  * License: GPL-2.0+
  *
@@ -30,7 +30,8 @@
 require_once __DIR__.'/inc/Setup.php';
 require_once __DIR__.'/inc/Shortcode.php';
 require_once __DIR__.'/inc/PostType.php';
+require_once __DIR__.'/inc/AdminPostDisplay.php';
+require_once __DIR__.'/inc/AdminListDisplay.php';
 require_once __DIR__.'/inc/functions.php';
 
 add_action('plugins_loaded', 'pmg_simpleblocks_load');
-
