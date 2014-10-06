@@ -25,9 +25,7 @@ function pmg_simpleblocks_load()
     }
 }
 
-if (is_admin()) {
-    function pmg_simpleblocks_shortcode($id)
-    {
-        return sprintf('[simple_block id="%s"]', esc_html($id));
-    }
+function pmg_simpleblocks_shortcode($id)
+{
+    return sprintf('[simple_block id="%s"]', esc_html($id));
 }
