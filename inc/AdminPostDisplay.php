@@ -26,7 +26,7 @@ class AdminPostDisplay extends Setup
     
     function addMetaBox()
     {
-        add_meta_box( 'my-meta-box-id', 'Shortcode', array($this, 'metaBoxContent'), PostType::POST_TYPE, 'normal', 'high' );
+        add_meta_box( 'my-meta-box-id', 'Shortcode', array($this, 'metaBoxContent'), PostType::POST_TYPE, 'side', 'core' );
     }
     
     function metaBoxContent($post)
