@@ -3,13 +3,13 @@
  * This file is part of Simple Blocks Plugin and it adds the shortcode
  * with prefilled ID to a meta box in the post edit page
  *
- * Copyright (c) 2014 PMG <http://pmg.co>
+ * Copyright (c) 2014 PMG <http://pmg.com>
  *
  * For full copyright and license information please see the LICENSE
  * file that was distributed with this source code.
  *
  * @category    WordPress
- * @copyright   2014 PMG <http://pmg.co>
+ * @copyright   2014 PMG <http://pmg.com>
  * @license     http://opensource.org/licenses/Apache-2.0 Apache-2.0
  */
 
@@ -23,7 +23,7 @@ class AdminPostDisplay extends Setup
     {
         add_action('add_meta_boxes_'.PostType::POST_TYPE, array($this, 'addMetaBox'));
     }
-    
+
     function addMetaBox($post)
     {
         if ('auto-draft' === $post->post_status) {
@@ -39,9 +39,9 @@ class AdminPostDisplay extends Setup
             'core'
         );
     }
-    
+
     function metaBoxContent($post)
     {
-        echo pmg_simpleblocks_shortcode($post->ID);  
+        echo pmg_simpleblocks_shortcode($post->ID);
     }
 }

@@ -1,20 +1,20 @@
 <?php
 /**
  * Plugin Name: Simple Blocks Post Type
- * Plugin URI: http://pmg.co/
+ * Plugin URI: http://pmg.com/
  * Description: Creates a custom post type that you can pull through via a shortcode
  * Version: 1.0
  * Text Domain: simple-blocks
- * Author: Emily Fox <emily@pmg.co>
- * Author URI: http://pmg.co/
+ * Author: Emily Fox <emily@pmg.com>
+ * Author URI: http://pmg.com/
  * License: GPL-2.0+
  *
- * Copyright 2014 Performance Media Group <http://pmg.co>
+ * Copyright 2014 Performance Media Group <http://pmg.com>
  *
  * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as 
+ * it under the terms of the GNU General Public License, version 2, as
  * published by the Free Software Foundation.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
